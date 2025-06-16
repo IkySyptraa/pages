@@ -57,6 +57,8 @@ body {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    /* --- ANIMASI BARU UNTUK TOMBOL --- */
+    animation: pulse 2s infinite ease-in-out; /* Menambahkan efek denyut */
 }
 
 .button:hover {
@@ -89,7 +91,18 @@ section h2 {
     margin-bottom: 15px;
     border-bottom: 2px solid #eee;
     padding-bottom: 10px;
+    /* --- ANIMASI BARU UNTUK JUDUL SEKSI --- */
+    opacity: 0; /* Awalnya tidak terlihat */
+    animation: fadeIn 1s forwards; /* Efek muncul perlahan */
 }
+
+/* Mengatur delay untuk setiap h2 agar muncul berurutan */
+section:nth-child(1) h2 { animation-delay: 0.5s; }
+section:nth-child(2) h2 { animation-delay: 0.7s; }
+section:nth-child(3) h2 { animation-delay: 0.9s; }
+section:nth-child(4) h2 { animation-delay: 1.1s; }
+section:nth-child(5) h2 { animation-delay: 1.3s; }
+
 
 /* List Styling */
 ul {
@@ -146,4 +159,16 @@ footer {
     .button {
         padding: 10px 20px;
     }
+}
+
+/* --- KEYFRAMES UNTUK ANIMASI BARU --- */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
